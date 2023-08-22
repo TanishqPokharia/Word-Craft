@@ -331,9 +331,6 @@ def Submit():
         if Check:
             if len(word) == 1:
                 wrong_label.place(x=390,y=15)
-                Score += 0
-
-                
             else:
                 correct_label.place(x=390,y=15)
                 Score += len(word)
