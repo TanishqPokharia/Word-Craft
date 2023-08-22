@@ -17,7 +17,7 @@ def play():
     f_one.place_forget()
     f_two.place(x=0, y=0)
     global e_one
-    e_one=Entry(f_two,width=30,font="20",borderwidth=10)
+    e_one=Entry(f_two,width=30,font="20",borderwidth=10,state='readonly')
     e_one.place(x=240,y=50)
     text_one=ascii_lowercase[random.randrange(len(ascii_lowercase))]
     text_two=ascii_lowercase[random.randrange(len(ascii_lowercase))]
@@ -297,8 +297,10 @@ def words(input,num):
     position=num
     global e_one
     current = e_one.get()
+    e_one.config(state='normal')
     e_one.delete(0, END)
     e_one.insert(0, str(current)+str(input))
+    e_one.config(state='readonly')
     global button_list
     button_list[position]['state']=NORMAL
     button_list[position].configure(bg="red")
